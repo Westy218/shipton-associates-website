@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Serve /page/ or /page as page.html, without changing the URL shown in the browser
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
