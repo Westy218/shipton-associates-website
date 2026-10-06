@@ -8,27 +8,56 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/style.v2.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo">
-      <img src="images/logo.webp" alt="Shipton & Associates">
+      <img src="/images/logo.webp" alt="Shipton & Associates">
     </a>
     <nav class="main-nav">
       <ul>
         <li><a href="/" class="active">Home</a></li>
         <li><a href="/about-us/">About Us</a></li>
         <li class="has-dropdown"><a href="/services/">Services</a>
-          <ul class="dropdown">
-            <li><a href="/conveyancing/">Conveyancing</a></li>
-            <li><a href="/write-a-will/">Write a Will</a></li>
-            <li><a href="/probate/">Probate</a></li>
-            <li><a href="/family-law/">Family Law</a></li>
-            <li><a href="/notary-public/">Notary Public</a></li>
-          </ul>
+          <div class="dropdown dropdown-split" data-dropdown="services">
+            <ul class="dropdown-categories">
+              <li class="has-subdropdown is-active" data-cat="conveyancing"><a href="/conveyancing/">Conveyancing <span class="cat-arrow">&#9656;</span></a></li>
+              <li class="has-subdropdown" data-cat="write-a-will"><a href="/write-a-will/">Write a Will <span class="cat-arrow">&#9656;</span></a></li>
+              <li><a href="/probate/">Probate</a></li>
+              <li class="has-subdropdown" data-cat="family-law"><a href="/family-law/">Family Law <span class="cat-arrow">&#9656;</span></a></li>
+              <li><a href="/notary-public/">Notary Public</a></li>
+            </ul>
+            <ul class="dropdown-subpanel is-active" data-panel="conveyancing">
+              <li><a href="/buying-residential-or-commercial-property/">Buying Residential or Commercial Property</a></li>
+              <li><a href="/selling-residential-or-commercial-property/">Selling Residential or Commercial Property</a></li>
+              <li><a href="/transfers-between-family-members/">Transfers Between Family Members</a></li>
+              <li><a href="/first-home-buyers/">First Home Buyers</a></li>
+              <li><a href="/severing-joint-tenancy/">Severing Joint Tenancy</a></li>
+            </ul>
+            <ul class="dropdown-subpanel" data-panel="write-a-will">
+              <li><a href="/deceased-estates/">Deceased Estates</a></li>
+              <li class="has-subdropdown" data-cat="estate-planning"><a href="/estate-planning/">Estate Planning <span class="cat-arrow">&#9656;</span></a></li>
+              <li><a href="/contested-wills-and-estates/">Contested Wills and Estates</a></li>
+              <li><a href="/family-provision-claims/">Family Provision Claims</a></li>
+            </ul>
+            <ul class="dropdown-subpanel" data-panel="estate-planning">
+              <li><a href="/wills-simple-or-discretionary-testamentary-trust-wills/">Wills &ndash; Simple or Testamentary Trust Wills</a></li>
+              <li><a href="/enduring-powers-of-attorney-and-appointments-of-enduring-guardianship/">Enduring Powers of Attorney and Appointments of Enduring Guardianship</a></li>
+              <li><a href="/advance-care-directive/">Advance Care Directive</a></li>
+            </ul>
+            <ul class="dropdown-subpanel" data-panel="family-law">
+              <li><a href="/property-division-and-financial-settlement/">Property Division and Financial Settlement</a></li>
+              <li><a href="/parenting-arragements/">Parenting Arrangements</a></li>
+              <li><a href="/divorce/">Divorce</a></li>
+              <li><a href="/financial-agreements-pre-nuptial-agreements/">Financial Agreements (Pre-Nuptial Agreements)</a></li>
+              <li><a href="/spouse-maintenance/">Spouse Maintenance</a></li>
+              <li><a href="/child-support/">Child Support</a></li>
+              <li><a href="/collaborative-law/">Collaborative Law</a></li>
+            </ul>
+          </div>
         </li>
         <li class="has-dropdown"><a href="/our-team/">Our Team</a>
           <ul class="dropdown">
@@ -59,7 +88,7 @@
 <div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-top">
     <a href="/" class="logo">
-      <img src="images/logo.webp" alt="Shipton & Associates">
+      <img src="/images/logo.webp" alt="Shipton & Associates">
     </a>
     <button class="nav-close" id="navClose" aria-label="Close menu">
       <span></span>
@@ -70,17 +99,52 @@
     <li><a href="/" class="active">Home</a></li>
     <li><a href="/about-us/">About Us</a></li>
     <li class="has-dropdown">
-      <button class="mobile-dropdown-toggle" aria-expanded="false">Services <span class="chevron">▾</span></button>
+      <button class="mobile-dropdown-toggle" aria-expanded="false">Services <span class="chevron">&#9662;</span></button>
       <ul class="mobile-dropdown">
-        <li><a href="/conveyancing/">Conveyancing</a></li>
-        <li><a href="/write-a-will/">Write a Will</a></li>
+        <li class="has-subdropdown">
+          <button class="mobile-subdropdown-toggle">Conveyancing <span class="chevron">&#9662;</span></button>
+          <ul class="mobile-subdropdown">
+            <li><a href="/buying-residential-or-commercial-property/">Buying Residential or Commercial Property</a></li>
+            <li><a href="/selling-residential-or-commercial-property/">Selling Residential or Commercial Property</a></li>
+            <li><a href="/transfers-between-family-members/">Transfers Between Family Members</a></li>
+            <li><a href="/first-home-buyers/">First Home Buyers</a></li>
+            <li><a href="/severing-joint-tenancy/">Severing Joint Tenancy</a></li>
+          </ul>
+        </li>
+        <li class="has-subdropdown">
+          <button class="mobile-subdropdown-toggle">Write a Will <span class="chevron">&#9662;</span></button>
+          <ul class="mobile-subdropdown">
+            <li><a href="/deceased-estates/">Deceased Estates</a></li>
+            <li class="has-subdropdown">
+              <button class="mobile-subdropdown-toggle">Estate Planning <span class="chevron">&#9662;</span></button>
+              <ul class="mobile-subdropdown">
+                <li><a href="/wills-simple-or-discretionary-testamentary-trust-wills/">Wills &ndash; Simple or Testamentary Trust Wills</a></li>
+                <li><a href="/enduring-powers-of-attorney-and-appointments-of-enduring-guardianship/">Enduring Powers of Attorney and Appointments of Enduring Guardianship</a></li>
+                <li><a href="/advance-care-directive/">Advance Care Directive</a></li>
+              </ul>
+            </li>
+            <li><a href="/contested-wills-and-estates/">Contested Wills and Estates</a></li>
+            <li><a href="/family-provision-claims/">Family Provision Claims</a></li>
+          </ul>
+        </li>
         <li><a href="/probate/">Probate</a></li>
-        <li><a href="/family-law/">Family Law</a></li>
+        <li class="has-subdropdown">
+          <button class="mobile-subdropdown-toggle">Family Law <span class="chevron">&#9662;</span></button>
+          <ul class="mobile-subdropdown">
+            <li><a href="/property-division-and-financial-settlement/">Property Division and Financial Settlement</a></li>
+            <li><a href="/parenting-arragements/">Parenting Arrangements</a></li>
+            <li><a href="/divorce/">Divorce</a></li>
+            <li><a href="/financial-agreements-pre-nuptial-agreements/">Financial Agreements (Pre-Nuptial Agreements)</a></li>
+            <li><a href="/spouse-maintenance/">Spouse Maintenance</a></li>
+            <li><a href="/child-support/">Child Support</a></li>
+            <li><a href="/collaborative-law/">Collaborative Law</a></li>
+          </ul>
+        </li>
         <li><a href="/notary-public/">Notary Public</a></li>
       </ul>
     </li>
     <li class="has-dropdown">
-      <button class="mobile-dropdown-toggle" aria-expanded="false">Our Team <span class="chevron">▾</span></button>
+      <button class="mobile-dropdown-toggle" aria-expanded="false">Our Team <span class="chevron">&#9662;</span></button>
       <ul class="mobile-dropdown">
         <li><a href="/michael-shipton/">Michael Shipton</a></li>
         <li><a href="/claire-nielsen/">Claire Nielsen</a></li>
@@ -91,7 +155,7 @@
     </li>
     <li><a href="/blog/">Blog</a></li>
     <li class="has-dropdown">
-      <button class="mobile-dropdown-toggle" aria-expanded="false">Contact <span class="chevron">▾</span></button>
+      <button class="mobile-dropdown-toggle" aria-expanded="false">Contact <span class="chevron">&#9662;</span></button>
       <ul class="mobile-dropdown">
         <li><a href="/contact/">Get in Touch</a></li>
         <li><a href="/disclaimer/">Disclaimer</a></li>
@@ -102,7 +166,7 @@
 </div>
 
 <section class="hero">
-  <img src="images/hero-office.jpg" alt="Shipton & Associates office, Manly">
+  <img src="/images/hero-office.jpg" alt="Shipton & Associates office, Manly">
 </section>
 
 <section class="hero-heading">
@@ -117,32 +181,32 @@
 
   <div class="service-grid">
     <div class="service-card">
-      <a href="/family-law/"><img src="images/service-family-law.webp" alt="Family law"></a>
+      <a href="/family-law/"><img src="/images/service-family-law.webp" alt="Family law"></a>
       <h3><a href="/family-law/">Family Law</a></h3>
       <a href="/property-division-and-financial-settlement/" class="more-details">More details &gt;</a>
     </div>
     <div class="service-card">
-      <a href="/write-a-will/"><img src="images/service-write-a-will.png" alt="Write a will"></a>
+      <a href="/write-a-will/"><img src="/images/service-write-a-will.png" alt="Write a will"></a>
       <h3><a href="/write-a-will/">Write A Will</a></h3>
       <a href="/estate-planning/" class="more-details">More details &gt;</a>
     </div>
     <div class="service-card">
-      <a href="/probate/"><img src="images/service-probate.jpg" alt="Probate"></a>
+      <a href="/probate/"><img src="/images/service-probate.jpg" alt="Probate"></a>
       <h3><a href="/probate/">Probate</a></h3>
       <a href="/probate/" class="more-details">More details &gt;</a>
     </div>
     <div class="service-card">
-      <a href="/conveyancing/"><img src="images/service-conveyancing.png" alt="Conveyancing"></a>
+      <a href="/conveyancing/"><img src="/images/service-conveyancing.png" alt="Conveyancing"></a>
       <h3><a href="/conveyancing/">Conveyancing</a></h3>
       <a href="/conveyancing/" class="more-details">More details &gt;</a>
     </div>
     <div class="service-card">
-      <a href="/notary-public/"><img src="images/service-notary.jpg" alt="Notary public"></a>
+      <a href="/notary-public/"><img src="/images/service-notary.jpg" alt="Notary public"></a>
       <h3><a href="/notary-public/">Notary Public</a></h3>
       <a href="/notary-public/" class="more-details">More details &gt;</a>
     </div>
     <div class="service-card">
-      <a href="/probate/"><img src="images/service-power-of-attorney.png" alt="Powers of attorney and appointments of enduring guardianship"></a>
+      <a href="/probate/"><img src="/images/service-power-of-attorney.png" alt="Powers of attorney and appointments of enduring guardianship"></a>
       <h3><a href="/probate/">Powers of Attorney and Appointments of Enduring Guardianship</a></h3>
       <a href="/enduring-powers-of-attorney-and-appointments-of-enduring-guardianship/" class="more-details">More details &gt;</a>
     </div>
@@ -156,103 +220,103 @@
     <div class="testimonial-grid" id="testimonialTrack">
     <div class="testimonial-card is-active">
       <div class="testimonial-head">
-        <img src="images/avatar-debra.jpg" alt="Debra Greyson" class="avatar">
+        <img src="/images/avatar-debra.jpg" alt="Debra Greyson" class="avatar">
         <div>
           <p class="name">Debra Greyson</p>
           <p class="stars">★★★★★</p>
         </div>
       </div>
-      <p>We have talking about getting a will for a long time and have even consulted other legal professionals but the process was time consuming, complicated and and costly. We were fortunate to have Claire Nielsen provide her services; she was professional, knowledgeable, patient and efficient. I would have no hesitation in contacting her for further services and also highly recommend her to others.</p>
+      <p class="testimonial-text">We have talking about getting a will for a long time and have even consulted other legal professionals but the process was time consuming, complicated and and costly. We were fortunate to have Claire Nielsen provide her services; she was professional, knowledgeable, patient and efficient. I would have no hesitation in contacting her for further services and also highly recommend her to others.</p>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-head">
-        <img src="images/avatar-luke.jpg" alt="Luke Dougherty" class="avatar">
+        <img src="/images/avatar-luke.jpg" alt="Luke Dougherty" class="avatar">
         <div>
           <p class="name">Luke Dougherty</p>
           <p class="stars">★★★★★</p>
         </div>
       </div>
-      <p>We've used Shipton &amp; Associates a number of times for property purchases, sales and estate planning. Each time we have been very happy with the advice and service.</p>
+      <p class="testimonial-text">We've used Shipton &amp; Associates a number of times for property purchases, sales and estate planning. Each time we have been very happy with the advice and service.</p>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-head">
-        <img src="images/avatar-linda.jpg" alt="Linda Silvester" class="avatar">
+        <img src="/images/avatar-linda.jpg" alt="Linda Silvester" class="avatar">
         <div>
           <p class="name">Linda Silvester</p>
           <p class="stars">★★★★★</p>
         </div>
       </div>
-      <p>I was recommended Shipton &amp; Associates, by a family member when as a grandmother I was involved in urgent child custody in Sydney Family Court. Claire Richards took on the case immediately and hugely assisted me to prepare my documents to enable me to represent my self in Court. In a traumatic and dramatic case Claire and Claire Richards went above and beyond the call to bring about justice, with calm efficiency, excellent applied legal knowledge delivered with compassion.</p>
+      <p class="testimonial-text">I was recommended Shipton &amp; Associates, by a family member when as a grandmother I was involved in urgent child custody in Sydney Family Court. Claire Richards took on the case immediately and hugely assisted me to prepare my documents to enable me to represent my self in Court. In a traumatic and dramatic case Claire and Claire Richards went above and beyond the call to bring about justice, with calm efficiency, excellent applied legal knowledge delivered with compassion.</p>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-head">
-        <img src="images/avatar-david.jpg" alt="David Glading" class="avatar">
+        <img src="/images/avatar-david.jpg" alt="David Glading" class="avatar">
         <div>
           <p class="name">David Glading</p>
           <p class="stars">★★★★★</p>
         </div>
       </div>
-      <p>Thank you to all the staff at Shipton &amp; Associates, Once again you have excelled yourselves. Our experience with you was 100% and we highly recommend you.</p>
+      <p class="testimonial-text">Thank you to all the staff at Shipton &amp; Associates, Once again you have excelled yourselves. Our experience with you was 100% and we highly recommend you.</p>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-head">
-        <img src="images/avatar-katie.jpg" alt="Katie Colby" class="avatar">
+        <img src="/images/avatar-katie.jpg" alt="Katie Colby" class="avatar">
         <div>
           <p class="name">Katie Colby</p>
           <p class="stars">★★★★★</p>
         </div>
       </div>
-      <p>Everyone I dealt with at Shipton and Associates was professional and friendly. My email enquiry was answered immediately and all of our legal matters were dealt with in a efficient and satisfactory way.</p>
+      <p class="testimonial-text">Everyone I dealt with at Shipton and Associates was professional and friendly. My email enquiry was answered immediately and all of our legal matters were dealt with in a efficient and satisfactory way.</p>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-head">
-        <img src="images/avatar-richard.jpg" alt="Richard Mitchell" class="avatar">
+        <img src="/images/avatar-richard.jpg" alt="Richard Mitchell" class="avatar">
         <div>
           <p class="name">Richard Mitchell</p>
           <p class="stars">★★★★★</p>
         </div>
       </div>
-      <p>Without a doubt shiptons are the best &amp; most professional law firm on the northern beaches. Claire &amp; the shipton lawyer's go above &amp; beyond for there clients.</p>
+      <p class="testimonial-text">Without a doubt shiptons are the best &amp; most professional law firm on the northern beaches. Claire &amp; the shipton lawyer's go above &amp; beyond for there clients.</p>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-head">
-        <img src="images/avatar-laith.jpg" alt="Laith Farouqi" class="avatar">
+        <img src="/images/avatar-laith.jpg" alt="Laith Farouqi" class="avatar">
         <div>
           <p class="name">Laith Farouqi</p>
           <p class="stars">★★★★★</p>
         </div>
       </div>
-      <p>My divorce experience was very tough and unpleasant, and throughout that period Claire guided and assisted me in navigating the process in a very professional and effective manner. Claire is very experienced, fair, empathetic and level headed lawyer. If you are seeking legal assistance to resolve your legal requirements in a subtle and fair manner then I would highly recommend working with Claire. Thank you very much Claire and the team.</p>
+      <p class="testimonial-text">My divorce experience was very tough and unpleasant, and throughout that period Claire guided and assisted me in navigating the process in a very professional and effective manner. Claire is very experienced, fair, empathetic and level headed lawyer. If you are seeking legal assistance to resolve your legal requirements in a subtle and fair manner then I would highly recommend working with Claire. Thank you very much Claire and the team.</p>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-head">
-        <img src="images/avatar-orlaith.jpg" alt="Orlaith Sheill" class="avatar">
+        <img src="/images/avatar-orlaith.jpg" alt="Orlaith Sheill" class="avatar">
         <div>
           <p class="name">Orlaith Sheill</p>
           <p class="stars">★★★★★</p>
         </div>
       </div>
-      <p>We cannot say thank you enough to Michael, Sharon and the team at Shipton. They have supported us for many years and particularly most recently with the selling and purchasing of properties. They are extremely knowledgeable, efficient, work with ease under pressure and take you every step of the way to settlement. They are proficient in managing difficulties and challenges that arise along the way, and their guidance is unfaltering.</p>
+      <p class="testimonial-text">We cannot say thank you enough to Michael, Sharon and the team at Shipton. They have supported us for many years and particularly most recently with the selling and purchasing of properties. They are extremely knowledgeable, efficient, work with ease under pressure and take you every step of the way to settlement. They are proficient in managing difficulties and challenges that arise along the way, and their guidance is unfaltering.</p>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-head">
-        <img src="images/avatar-cassandra.jpg" alt="Cassandra Cordwell" class="avatar">
+        <img src="/images/avatar-cassandra.jpg" alt="Cassandra Cordwell" class="avatar">
         <div>
           <p class="name">Cassandra Cordwell</p>
           <p class="stars">★★★★★</p>
         </div>
       </div>
-      <p>Cannot recommend Claire and Paige highly enough. Their efficiency, pragmatism, responsiveness and service has been impeccable, throughout complex market dynamics, including a last minute demand from the purchaser's solicitors, the team achieved simultaneous settlements for the sale of my old home and the purchase of my new wonderful family home. The team operate with such professionalism and are a well oiled machine and also a pleasure to work with thank you.</p>
+      <p class="testimonial-text">Cannot recommend Claire and Paige highly enough. Their efficiency, pragmatism, responsiveness and service has been impeccable, throughout complex market dynamics, including a last minute demand from the purchaser's solicitors, the team achieved simultaneous settlements for the sale of my old home and the purchase of my new wonderful family home. The team operate with such professionalism and are a well oiled machine and also a pleasure to work with thank you.</p>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-head">
-        <img src="images/avatar-amy.jpg" alt="Amy Vandenhurk" class="avatar">
+        <img src="/images/avatar-amy.jpg" alt="Amy Vandenhurk" class="avatar">
         <div>
           <p class="name">Amy Vandenhurk</p>
           <p class="stars">★★★★★</p>
         </div>
       </div>
-      <p>If I could give more stars I would! From the first phone call my experience with Shipton and Associates was a seamless and supported one. The responsiveness to my phone calls and emails was greatly appreciated. I felt supported through the whole process and it made me feel confident that everything would be handled professionally and seamlessly, which it absolutely was! I could not recommend them more highly and would work with them again for any future purchase.</p>
+      <p class="testimonial-text">If I could give more stars I would! From the first phone call my experience with Shipton and Associates was a seamless and supported one. The responsiveness to my phone calls and emails was greatly appreciated. I felt supported through the whole process and it made me feel confident that everything would be handled professionally and seamlessly, which it absolutely was! I could not recommend them more highly and would work with them again for any future purchase.</p>
     </div>
     </div>
     <button class="carousel-arrow carousel-next" aria-label="Next testimonial">›</button>
@@ -284,19 +348,19 @@
   <h2 class="section-heading-sm">Read our latest posts</h2>
   <div class="post-grid">
     <article class="post-card">
-      <img src="images/post-diy-will-kits.jpg" alt="">
+      <img src="/images/post-diy-will-kits.jpg" alt="">
       <h3><a href="/diy-will-kits-vs-tailored-advice-the-smart-choice-for-your-legacy/">DIY Will Kits vs. Tailored Advice: The Smart Choice for Your Legacy</a></h3>
-      <p class="author"><img src="images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
+      <p class="author"><img src="/images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
     </article>
     <article class="post-card">
-      <img src="images/post-critical-must-knows.jpg" alt="">
+      <img src="/images/post-critical-must-knows.jpg" alt="">
       <h3><a href="/critical-must-knows-for-writing-your-will-in-new-south-wales-nsw-dont-risk-your-familys-future/">Critical Must-Knows for Writing Your Will in New South Wales (NSW) – Don't Risk Your Family's Future!</a></h3>
-      <p class="author"><img src="images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
+      <p class="author"><img src="/images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
     </article>
     <article class="post-card">
-      <img src="images/post-left-out-of-will.jpg" alt="">
+      <img src="/images/post-left-out-of-will.jpg" alt="">
       <h3><a href="/have-you-been-left-out-of-a-will/">Have you been left out of a Will?</a></h3>
-      <p class="author"><img src="images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
+      <p class="author"><img src="/images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
     </article>
   </div>
 </section>
@@ -320,7 +384,7 @@
       <p class="footer-heading">Address</p>
       <p>Shipton &amp; Associates<br><br>Suite 1, 1 Raglan Street, MANLY NSW 2095</p>
       <div class="wheelchair-row">
-        <img src="images/brand-assets/wheelchair-icon.webp" alt="" class="wheelchair-icon">
+        <img src="/images/brand-assets/wheelchair-icon.webp" alt="" class="wheelchair-icon">
         <p class="wheelchair">Wheelchair access from Henrietta Lane, Manly</p>
       </div>
       <p class="footer-heading footer-heading-spaced">Follow Us</p>
@@ -372,36 +436,7 @@
   })();
 </script>
 
-<script>
-  (function() {
-    var navToggle = document.getElementById('navToggle');
-    var navClose = document.getElementById('navClose');
-    var mobileNav = document.getElementById('mobileNav');
-
-    function openMobileNav() {
-      mobileNav.classList.add('is-open');
-      navToggle.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeMobileNav() {
-      mobileNav.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-
-    navToggle.addEventListener('click', openMobileNav);
-    navClose.addEventListener('click', closeMobileNav);
-
-    document.querySelectorAll('.mobile-dropdown-toggle').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var item = btn.closest('.has-dropdown');
-        var isOpen = item.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    });
-  })();
-</script>
+<script src="/nav.v2.js"></script>
 
 </body>
 </html>

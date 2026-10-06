@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/style.v2.css">
 </head>
 <body>
 
@@ -20,20 +20,49 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo">
-      <img src="images/logo.webp" alt="Shipton & Associates">
+      <img src="/images/logo.webp" alt="Shipton & Associates">
     </a>
     <nav class="main-nav">
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/about-us/">About Us</a></li>
         <li class="has-dropdown"><a href="/services/" class="active">Services</a>
-          <ul class="dropdown">
-            <li><a href="/conveyancing/">Conveyancing</a></li>
-            <li><a href="/write-a-will/">Write a Will</a></li>
-            <li><a href="/probate/">Probate</a></li>
-            <li><a href="/family-law/" class="active">Family Law</a></li>
-            <li><a href="/notary-public/">Notary Public</a></li>
-          </ul>
+          <div class="dropdown dropdown-split" data-dropdown="services">
+            <ul class="dropdown-categories">
+              <li class="has-subdropdown is-active" data-cat="conveyancing"><a href="/conveyancing/">Conveyancing <span class="cat-arrow">&#9656;</span></a></li>
+              <li class="has-subdropdown" data-cat="write-a-will"><a href="/write-a-will/">Write a Will <span class="cat-arrow">&#9656;</span></a></li>
+              <li><a href="/probate/">Probate</a></li>
+              <li class="has-subdropdown" data-cat="family-law"><a href="/family-law/">Family Law <span class="cat-arrow">&#9656;</span></a></li>
+              <li><a href="/notary-public/">Notary Public</a></li>
+            </ul>
+            <ul class="dropdown-subpanel is-active" data-panel="conveyancing">
+              <li><a href="/buying-residential-or-commercial-property/">Buying Residential or Commercial Property</a></li>
+              <li><a href="/selling-residential-or-commercial-property/">Selling Residential or Commercial Property</a></li>
+              <li><a href="/transfers-between-family-members/">Transfers Between Family Members</a></li>
+              <li><a href="/first-home-buyers/">First Home Buyers</a></li>
+              <li><a href="/severing-joint-tenancy/">Severing Joint Tenancy</a></li>
+            </ul>
+            <ul class="dropdown-subpanel" data-panel="write-a-will">
+              <li><a href="/deceased-estates/">Deceased Estates</a></li>
+              <li class="has-subdropdown" data-cat="estate-planning"><a href="/estate-planning/">Estate Planning <span class="cat-arrow">&#9656;</span></a></li>
+              <li><a href="/contested-wills-and-estates/">Contested Wills and Estates</a></li>
+              <li><a href="/family-provision-claims/">Family Provision Claims</a></li>
+            </ul>
+            <ul class="dropdown-subpanel" data-panel="estate-planning">
+              <li><a href="/wills-simple-or-discretionary-testamentary-trust-wills/">Wills &ndash; Simple or Testamentary Trust Wills</a></li>
+              <li><a href="/enduring-powers-of-attorney-and-appointments-of-enduring-guardianship/">Enduring Powers of Attorney and Appointments of Enduring Guardianship</a></li>
+              <li><a href="/advance-care-directive/">Advance Care Directive</a></li>
+            </ul>
+            <ul class="dropdown-subpanel" data-panel="family-law">
+              <li><a href="/property-division-and-financial-settlement/">Property Division and Financial Settlement</a></li>
+              <li><a href="/parenting-arragements/">Parenting Arrangements</a></li>
+              <li><a href="/divorce/">Divorce</a></li>
+              <li><a href="/financial-agreements-pre-nuptial-agreements/">Financial Agreements (Pre-Nuptial Agreements)</a></li>
+              <li><a href="/spouse-maintenance/">Spouse Maintenance</a></li>
+              <li><a href="/child-support/">Child Support</a></li>
+              <li><a href="/collaborative-law/">Collaborative Law</a></li>
+            </ul>
+          </div>
         </li>
         <li class="has-dropdown"><a href="/our-team/">Our Team</a>
           <ul class="dropdown">
@@ -53,10 +82,94 @@
         </li>
       </ul>
     </nav>
+<button class="nav-toggle" aria-label="Open menu">
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+</button>
+
+<div class="mobile-nav">
+  <div class="mobile-nav-top">
+    <a href="/" class="logo">
+      <img src="/images/logo.webp" alt="Shipton & Associates">
+    </a>
+    <button class="nav-close" aria-label="Close menu">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <ul class="mobile-nav-list">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about-us/">About Us</a></li>
+    <li class="has-dropdown">
+      <button class="mobile-dropdown-toggle">Services <span class="chevron">&#9662;</span></button>
+      <ul class="mobile-dropdown">
+        <li class="has-subdropdown">
+          <button class="mobile-subdropdown-toggle">Conveyancing <span class="chevron">&#9662;</span></button>
+          <ul class="mobile-subdropdown">
+            <li><a href="/buying-residential-or-commercial-property/">Buying Residential or Commercial Property</a></li>
+            <li><a href="/selling-residential-or-commercial-property/">Selling Residential or Commercial Property</a></li>
+            <li><a href="/transfers-between-family-members/">Transfers Between Family Members</a></li>
+            <li><a href="/first-home-buyers/">First Home Buyers</a></li>
+            <li><a href="/severing-joint-tenancy/">Severing Joint Tenancy</a></li>
+          </ul>
+        </li>
+        <li class="has-subdropdown">
+          <button class="mobile-subdropdown-toggle">Write a Will <span class="chevron">&#9662;</span></button>
+          <ul class="mobile-subdropdown">
+            <li><a href="/deceased-estates/">Deceased Estates</a></li>
+            <li class="has-subdropdown">
+              <button class="mobile-subdropdown-toggle">Estate Planning <span class="chevron">&#9662;</span></button>
+              <ul class="mobile-subdropdown">
+                <li><a href="/wills-simple-or-discretionary-testamentary-trust-wills/">Wills &ndash; Simple or Testamentary Trust Wills</a></li>
+                <li><a href="/enduring-powers-of-attorney-and-appointments-of-enduring-guardianship/">Enduring Powers of Attorney and Appointments of Enduring Guardianship</a></li>
+                <li><a href="/advance-care-directive/">Advance Care Directive</a></li>
+              </ul>
+            </li>
+            <li><a href="/contested-wills-and-estates/">Contested Wills and Estates</a></li>
+            <li><a href="/family-provision-claims/">Family Provision Claims</a></li>
+          </ul>
+        </li>
+        <li><a href="/probate/">Probate</a></li>
+        <li class="has-subdropdown">
+          <button class="mobile-subdropdown-toggle">Family Law <span class="chevron">&#9662;</span></button>
+          <ul class="mobile-subdropdown">
+            <li><a href="/property-division-and-financial-settlement/">Property Division and Financial Settlement</a></li>
+            <li><a href="/parenting-arragements/">Parenting Arrangements</a></li>
+            <li><a href="/divorce/">Divorce</a></li>
+            <li><a href="/financial-agreements-pre-nuptial-agreements/">Financial Agreements (Pre-Nuptial Agreements)</a></li>
+            <li><a href="/spouse-maintenance/">Spouse Maintenance</a></li>
+            <li><a href="/child-support/">Child Support</a></li>
+            <li><a href="/collaborative-law/">Collaborative Law</a></li>
+          </ul>
+        </li>
+        <li><a href="/notary-public/">Notary Public</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <button class="mobile-dropdown-toggle">Our Team <span class="chevron">&#9662;</span></button>
+      <ul class="mobile-dropdown">
+        <li><a href="/michael-shipton/">Michael Shipton</a></li>
+        <li><a href="/claire-nielsen/">Claire Nielsen</a></li>
+        <li><a href="/jaclyn-davis/">Jaclyn Davis</a></li>
+        <li><a href="/claire-richards/">Claire Richards</a></li>
+        <li><a href="/sharon-avakian/">Sharon Avakian</a></li>
+      </ul>
+    </li>
+    <li><a href="/blog/">Blog</a></li>
+    <li class="has-dropdown">
+      <button class="mobile-dropdown-toggle">Contact <span class="chevron">&#9662;</span></button>
+      <ul class="mobile-dropdown">
+        <li><a href="/disclaimer/">Disclaimer</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
   </div>
 </header>
 
-<section class="service-hero">
+<section class="service-hero" style="background-image: url('/images/hero-financial-agreements.jpg');">
   <p class="service-eyebrow">services</p>
   <h1>Financial Agreements</h1>
 </section>
@@ -68,7 +181,7 @@
 <section class="section cream service-intro">
   <div class="service-feature">
     <p>Financial Agreements are essential legal documents that allow couples to establish clear guidelines for asset division and financial responsibilities in the event of a separation or divorce. Our experienced attorneys understand the sensitive nature of these agreements and work with sensitivity and discretion to tailor them to your specific needs and circumstances. We prioritise open communication and cooperation between partners, striving to create agreements that protect your interests while promoting a positive and secure foundation for your relationship. With our strategic approach and legal expertise, we aim to empower you and your partner to enter your marriage with confidence, knowing that your financial matters are protected. Let us be your trusted legal partner in securing your financial future with expert Financial Agreements (Pre-Nuptial Agreements) services.</p>
-    <img src="images/financial-agreements-inline.jpg" alt="Close-up of an engagement ring" class="service-inline-image">
+    <img src="/images/financial-agreements-inline.jpg" alt="Close-up of an engagement ring" class="service-inline-image">
   </div>
 </section>
 
@@ -100,11 +213,11 @@
         </li>
       </ul>
     </div>
-    <img src="service-list-family-law.jpg" alt="" class="service-list-image">
+    <img src="/service-list-family-law.jpg" alt="" class="service-list-image">
   </div>
 </section>
 
-<section class="testimonial-single" style="background-image: url('https://www.shiptonandassociates.com.au/wp-content/uploads/2023/04/testimonial-background-image-1280.jpg');">
+<section class="testimonial-single" style="background-image: url('/images/testimonial-background-image-1280.jpg');">
   <div class="testimonial-single-inner">
     <p class="testimonial-quote-mark">&rdquo;</p>
     <blockquote>Professional practice with helpful and available staff. Would definitely recommend for your family law or other legal needs.</blockquote>
@@ -116,19 +229,19 @@
   <h2 class="section-heading-sm">Related Post</h2>
   <div class="post-grid">
     <article class="post-card">
-      <img src="images/post-diy-will-kits.jpg" alt="">
+      <img src="/images/post-diy-will-kits.jpg" alt="">
       <h3><a href="/diy-will-kits-vs-tailored-advice-the-smart-choice-for-your-legacy/">DIY Will Kits vs. Tailored Advice: The Smart Choice for Your Legacy</a></h3>
-      <p class="author"><img src="images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
+      <p class="author"><img src="/images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
     </article>
     <article class="post-card">
-      <img src="images/post-critical-must-knows.jpg" alt="">
+      <img src="/images/post-critical-must-knows.jpg" alt="">
       <h3><a href="/critical-must-knows-for-writing-your-will-in-new-south-wales-nsw-dont-risk-your-familys-future/">Critical Must-Knows for Writing Your Will in New South Wales (NSW) – Don't Risk Your Family's Future!</a></h3>
-      <p class="author"><img src="images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
+      <p class="author"><img src="/images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
     </article>
     <article class="post-card">
-      <img src="images/post-left-out-of-will.jpg" alt="">
+      <img src="/images/post-left-out-of-will.jpg" alt="">
       <h3><a href="/have-you-been-left-out-of-a-will/">Have you been left out of a Will?</a></h3>
-      <p class="author"><img src="images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
+      <p class="author"><img src="/images/avatar-claire-nielsen.jpg" alt="" class="avatar-sm"> Claire Nielsen</p>
     </article>
   </div>
 </section>
@@ -139,7 +252,7 @@
       <p class="footer-heading">Address</p>
       <p>Shipton &amp; Associates<br><br>Suite 1, 1 Raglan Street, MANLY NSW 2095</p>
       <div class="wheelchair-row">
-        <img src="images/brand-assets/wheelchair-icon.webp" alt="" class="wheelchair-icon">
+        <img src="/images/brand-assets/wheelchair-icon.webp" alt="" class="wheelchair-icon">
         <p class="wheelchair">Wheelchair access from Henrietta Lane, Manly</p>
       </div>
       <p class="footer-heading footer-heading-spaced">Follow Us</p>
@@ -176,5 +289,6 @@
   </div>
 </footer>
 
+<script src="/nav.v2.js"></script>
 </body>
 </html>
