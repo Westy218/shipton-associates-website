@@ -252,7 +252,7 @@ a { color: inherit; text-decoration: none; }
    driven by nav.js toggling the .is-active class, not CSS hover alone --
    this avoids stacked flyout boxes that break at in-between window widths. */
 .main-nav .dropdown-split {
-  display: flex;
+  display: none;
   align-items: stretch;
   padding: 0;
   min-width: 0;
